@@ -10,6 +10,11 @@ taskipy = "^1.10.2"
 strawberry-graphql = {extras = ["fastapi"], version = "^0.126.0"}
 uvicorn = {extras = ["standard"], version = "^0.18.2"}
 sqlmodel = "^0.0.6"
+alembic = "^1.8.1"
+asyncpg = "^0.26.0"
+greenlet = "^1.1.2"
+fastapi-async-sqlalchemy = "^0.3.12"
+shortuuid = "^1.0.9"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.2"
@@ -20,7 +25,10 @@ mypy = "^0.971"
 
 [tool.taskipy.tasks]
 start = "uvicorn main:app --port 4000 --reload"
-lint = "black . && isort . && flake8 . && mypy ."
+db-migrate = "alembic revision --autogenerate"
+db-upgrade = "alembic upgrade head"
+diff = "black . --diff && isort . --diff && flake8 . --diff"
+lint = "black . && isort . && flake8 ."
 
 [tool.black]
 extend-exclude = ""

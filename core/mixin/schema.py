@@ -1,7 +1,10 @@
-import strawberry, uuid, datetime
+from datetime import datetime
+
+import strawberry
+
 
 @strawberry.type
 class TypeMixin:
-  id: uuid.UUID
-  created_at: datetime.datetime
-  updated_at: datetime.datetime
+    id: str
+    created_at: datetime
+    updated_at: datetime
