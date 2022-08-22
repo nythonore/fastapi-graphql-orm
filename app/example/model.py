@@ -1,7 +1,7 @@
-from core.mixin.model import TimeStampMixin, UUIDMixin
+from core.mixin.model import ModelMixin
 
 
-class Example(TimeStampMixin, UUIDMixin, table=True):
+class Example(ModelMixin, table=True):
     __tablename__ = "examples"
 
     name: str
