@@ -24,11 +24,12 @@ isort = "^5.10.1"
 mypy = "^0.971"
 
 [tool.taskipy.tasks]
-start = "uvicorn main:app --port 4000 --reload"
+start = "uvicorn src.main:app --port 4000 --reload"
 db-migrate = "alembic revision --autogenerate"
 db-upgrade = "alembic upgrade head"
 diff = "black . --diff && isort . --diff && flake8 . --diff"
 lint = "black . && isort . && flake8 ."
+test = "pytest"
 
 [tool.black]
 extend-exclude = ""

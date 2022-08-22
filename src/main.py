@@ -2,8 +2,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi_async_sqlalchemy import SQLAlchemyMiddleware
 
-from config.database import DATABASE_URL
-from config.graphql import graphql
+from .config.database import DATABASE_URL
+from .config.graphql import graphql
 
 app = FastAPI()
 

@@ -2,8 +2,8 @@ import strawberry
 from strawberry.fastapi import GraphQLRouter
 from strawberry.tools import merge_types
 
-from app.example.type import ExampleMutation, ExampleQuery
-from config.settings import settings
+from ..app.example.type import ExampleMutation, ExampleQuery
+from .settings import settings
 
 Query = merge_types("Query", (ExampleQuery,))
 

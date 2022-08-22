@@ -1,6 +1,6 @@
 import strawberry
 
-from core.mixin.schema import TypeMixin
+from ...core.mixin.schema import TypeMixin
 
 
 @strawberry.type

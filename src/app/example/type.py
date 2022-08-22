@@ -2,8 +2,8 @@ from typing import List
 
 import strawberry
 
-from app.example.model import Example
-from app.example.schema import ExampleInput, ExampleType
+from .model import Example
+from .schema import ExampleInput, ExampleType
 
 
 @strawberry.type

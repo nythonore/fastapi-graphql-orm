@@ -1,2 +1,0 @@
-class DatabaseSeeder:
-    pass

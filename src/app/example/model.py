@@ -1,4 +1,4 @@
-from core.mixin.model import ModelMixin
+from ...core.mixin.model import ModelMixin
 
 
 class Example(ModelMixin, table=True):
