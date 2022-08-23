@@ -4,6 +4,7 @@ from pydantic import BaseSettings
 
 
 class Settings(BaseSettings):
+    APP_NAME: str = "FastAPI"
     APP_DEBUG: bool = True
 
     DB_HOST: str = "localhost"

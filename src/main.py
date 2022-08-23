@@ -4,8 +4,13 @@ from fastapi_async_sqlalchemy import SQLAlchemyMiddleware
 
 from .config.database import DATABASE_URL
 from .config.graphql import graphql
+from .config.settings import settings
 
-app = FastAPI()
+app = FastAPI(
+    title=settings.APP_NAME,
+    docs_url=None,
+    redoc_url="/docs" if settings.APP_DEBUG else None,
+)
 
 app.add_middleware(
     CORSMiddleware,
