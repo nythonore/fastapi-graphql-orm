@@ -21,7 +21,6 @@ pytest = "^7.1.2"
 black = "^22.6.0"
 flake8 = "^5.0.4"
 isort = "^5.10.1"
-mypy = "^0.971"
 
 [tool.taskipy.tasks]
 start = "uvicorn src.main:app --port 4000 --reload"
@@ -32,22 +31,13 @@ lint = "black . && isort . && flake8 ."
 test = "pytest"
 
 [tool.black]
-extend-exclude = ""
+extend-exclude = "src/database/migrations"
 
 [tool.isort]
 profile = "black"
 atomic = true
-extend_skip_glob = ""
+extend_skip_glob = "src/database/migrations"
 line_length = 88
-
-[tool.mypy]
-follow_imports = "skip"
-ignore_missing_imports = true
-warn_no_return = false
-warn_unused_ignores = true
-allow_untyped_globals = true
-allow_redefinition = true
-pretty = true
 
 [[tool.mypy.overrides]]
 module = "tests.*"
